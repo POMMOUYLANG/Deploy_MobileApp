@@ -7,14 +7,17 @@ class Layout extends StatefulWidget {
   State<Layout> createState() => _LayoutState();
 }
 
+// Session1
+
 class _LayoutState extends State<Layout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.pink,
         title: const Text(
-          'Flutter Layout',
-          style: TextStyle(color: Colors.black),
+          'Flutter Layout Demo',
+          style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
       ),
@@ -27,6 +30,17 @@ class _LayoutState extends State<Layout> {
             const ActionButtons(),
             const DescriptionWidget(),
           ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.pink,
+        child: IconButton(
+          color: Colors.white,
+          icon: const Icon(Icons.home),
+          onPressed: () {
+            // ignore: avoid_print
+            print("Button Pressed");
+          },
         ),
       ),
     );
@@ -52,9 +66,9 @@ class CampgroundWidget extends StatelessWidget {
                 Text(
                   'Oeschinen Lake Campground',
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16.0,
-                  ),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16.0,
+                      color: Colors.black),
                 ),
                 SizedBox(height: 4.0),
                 Text(
@@ -68,7 +82,7 @@ class CampgroundWidget extends StatelessWidget {
           ),
           Icon(
             Icons.star,
-            color: Colors.red,
+            color: Colors.pink,
           ),
           SizedBox(width: 4.0),
           Text('41'),
@@ -95,14 +109,14 @@ class ActionButtons extends StatelessWidget {
             children: [
               Icon(
                 Icons.call,
-                color: Colors.purple,
+                color: Colors.pink,
               ),
               SizedBox(height: 8.0),
               Text(
                 'CALL',
                 style: TextStyle(
                   fontSize: 12.0,
-                  color: Colors.purple,
+                  color: Colors.pink,
                 ),
               ),
             ],
@@ -112,14 +126,14 @@ class ActionButtons extends StatelessWidget {
             children: [
               Icon(
                 Icons.near_me,
-                color: Colors.purple,
+                color: Colors.pink,
               ),
               SizedBox(height: 8.0),
               Text(
                 'ROUTE',
                 style: TextStyle(
                   fontSize: 12.0,
-                  color: Colors.purple,
+                  color: Colors.pink,
                 ),
               ),
             ],
@@ -129,14 +143,14 @@ class ActionButtons extends StatelessWidget {
             children: [
               Icon(
                 Icons.share,
-                color: Colors.purple,
+                color: Colors.pink,
               ),
               SizedBox(height: 8.0),
               Text(
                 'SHARE',
                 style: TextStyle(
                   fontSize: 12.0,
-                  color: Colors.purple,
+                  color: Colors.pink,
                 ),
               ),
             ],
@@ -154,7 +168,7 @@ class DescriptionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(23.0),
       child: Text(
         'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. '
         'Situated 1,578 meters above sea level, it is one of the larger Alpine Lakes. '
